@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 16.94 s <<< FAILURE! - in TestSuite
+package1.tc1.f on [tc1 passed=0 failed=0 skipped=0]  Time elapsed: 7.867 s  <<< FAILURE!
+java.lang.AssertionError: expected [Demo Web Shop] but found [Demo Web Shops]
+	at package1.tc1.f(tc1.java:19)
+

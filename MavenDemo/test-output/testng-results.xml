@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2024-08-09T10:02:21Z" name="Suite" finished-at="2024-08-09T10:03:28Z" duration-ms="67476">
+    <groups>
+    </groups>
+    <test started-at="2024-08-09T10:02:21Z" name="Test1" finished-at="2024-08-09T10:02:29Z" duration-ms="8407">
+      <class name="Title">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:Title@4ef37659]" started-at="2024-08-09T15:32:21Z" name="setUp" finished-at="2024-08-09T15:32:29Z" duration-ms="8163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="verifyTitle()[pri:0, instance:Title@4ef37659]" started-at="2024-08-09T15:32:29Z" name="verifyTitle" finished-at="2024-08-09T15:32:29Z" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyTitle -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:Title@4ef37659]" started-at="2024-08-09T15:32:29Z" name="afterClass" finished-at="2024-08-09T15:32:29Z" duration-ms="197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- Title -->
+    </test> <!-- Test1 -->
+    <test started-at="2024-08-09T10:02:29Z" name="Test2" finished-at="2024-08-09T10:02:40Z" duration-ms="10812">
+      <class name="invalidCre">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:invalidCre@378542de]" started-at="2024-08-09T15:32:29Z" name="setUp" finished-at="2024-08-09T15:32:36Z" duration-ms="7207" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="invalidCredentials()[pri:0, instance:invalidCre@378542de]" started-at="2024-08-09T15:32:36Z" name="invalidCredentials" finished-at="2024-08-09T15:32:40Z" duration-ms="3394" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- invalidCredentials -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:invalidCre@378542de]" started-at="2024-08-09T15:32:40Z" name="afterClass" finished-at="2024-08-09T15:32:40Z" duration-ms="208" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- invalidCre -->
+    </test> <!-- Test2 -->
+    <test started-at="2024-08-09T10:02:40Z" name="Test3" finished-at="2024-08-09T10:02:52Z" duration-ms="11894">
+      <class name="validCredentials">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:validCredentials@5fd4f8f5]" started-at="2024-08-09T15:32:40Z" name="setUp" finished-at="2024-08-09T15:32:49Z" duration-ms="9319" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="validCredent()[pri:0, instance:validCredentials@5fd4f8f5]" started-at="2024-08-09T15:32:49Z" name="validCredent" finished-at="2024-08-09T15:32:52Z" duration-ms="2326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validCredent -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:validCredentials@5fd4f8f5]" started-at="2024-08-09T15:32:52Z" name="afterClass" finished-at="2024-08-09T15:32:52Z" duration-ms="245" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- validCredentials -->
+    </test> <!-- Test3 -->
+    <test started-at="2024-08-09T10:02:52Z" name="Test4" finished-at="2024-08-09T10:03:16Z" duration-ms="23949">
+      <class name="passwordChange">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:passwordChange@4944252c]" started-at="2024-08-09T15:32:52Z" name="setUp" finished-at="2024-08-09T15:33:00Z" duration-ms="7836" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="changePassword()[pri:0, instance:passwordChange@4944252c]" started-at="2024-08-09T15:33:00Z" name="changePassword" finished-at="2024-08-09T15:33:16Z" duration-ms="15849" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- changePassword -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:passwordChange@4944252c]" started-at="2024-08-09T15:33:16Z" name="afterClass" finished-at="2024-08-09T15:33:16Z" duration-ms="262" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- passwordChange -->
+    </test> <!-- Test4 -->
+    <test started-at="2024-08-09T10:03:16Z" name="Test5" finished-at="2024-08-09T10:03:28Z" duration-ms="12300">
+      <class name="logout">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:logout@51dcb805]" started-at="2024-08-09T15:33:16Z" name="setUp" finished-at="2024-08-09T15:33:23Z" duration-ms="7280" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="logOut()[pri:0, instance:logout@51dcb805]" started-at="2024-08-09T15:33:23Z" name="logOut" finished-at="2024-08-09T15:33:28Z" duration-ms="4757" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logOut -->
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:logout@51dcb805]" started-at="2024-08-09T15:33:28Z" name="afterClass" finished-at="2024-08-09T15:33:28Z" duration-ms="260" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- logout -->
+    </test> <!-- Test5 -->
+  </suite> <!-- Suite -->
+</testng-results>

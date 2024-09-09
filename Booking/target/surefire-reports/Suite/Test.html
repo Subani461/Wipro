@@ -1,0 +1,93 @@
+<html>
+<head>
+<title>TestNG:  Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Aug 28 15:32:35 IST 2024</td>
+</tr>
+<tr><td>Total time:</td><td>5 seconds (5655 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.App.Testcases.testrunner.runScenario()'><b>runScenario</b><br>Test class: com.App.Testcases.testrunner<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Validate search functionality", "Optional[Booking.com UI Testing]"</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.App.PageObjects.HomePage.enterSearchCriteria(HomePage.java:24)
+	at com.App.Testcases.HomePageTest.i_search_for_with_check_in_date_and_check_out_date_and_guests(HomePageTest.java:24)
+	at ?.I search for &quot;New York&quot; with check-in date &quot;2024-12-01&quot; and check-out date &quot;2024-12-07&quot; and 2 guests(file:///C:/Users/Administrator/eclipse-workspace/Booking/src/test/resources/features/search.feature:6)
+</pre></div><a href='#' onClick='toggleBox("stack-trace31105597", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace31105597'><pre>java.lang.NullPointerException
+	at com.App.PageObjects.HomePage.enterSearchCriteria(HomePage.java:24)
+	at com.App.Testcases.HomePageTest.i_search_for_with_check_in_date_and_check_out_date_and_guests(HomePageTest.java:24)
+	at ?.I search for &quot;New York&quot; with check-in date &quot;2024-12-01&quot; and check-out date &quot;2024-12-07&quot; and 2 guests(file:///C:/Users/Administrator/eclipse-workspace/Booking/src/test/resources/features/search.feature:6)
+</pre></div></td>
+<td>5</td>
+<td>com.App.Testcases.testrunner@1b9a632</td></tr>
+</table><p>
+</body>
+</html>

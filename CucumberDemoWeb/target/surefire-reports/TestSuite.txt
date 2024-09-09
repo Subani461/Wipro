@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 31.51 s <<< FAILURE! - in TestSuite
+runScenario(com.App.Testcases.testrunner)  Time elapsed: 16.242 s  <<< FAILURE!
+java.lang.AssertionError: expected [https://demowebshop.tricentis.com/login] but found [https://demowebshop.tricentis.com/]
+

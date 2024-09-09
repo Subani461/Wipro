@@ -1,0 +1,125 @@
+package testCases;
+
+import org.openqa.selenium.WebDriver;
+
+public class tc1_Login {
+  private WebDriver driver;
+
+  public LoginSteps(ECommercePortal eCommercePortal) {
+      this.eCommercePortal = eCommercePortal;
+      this.driver = eCommercePortal.getDriver();
+  }
+
+  @Given("I am on the login page")
+  public void i_am_on_the_login_page() {
+      eCommercePortal.navigateToLoginPage();
+  }
+
+  @When("I enter valid credentials")
+  public void i_enter_valid_credentials() {
+      eCommercePortal.loginToECommercePortal("username", "password");
+  }
+
+  @Then("I should be logged in successfully")
+  public void i_should_be_logged_in_successfully() {
+      Assert.assertTrue(eCommercePortal.isLoggedIn());
+  }
+}
+
+
+
+
+
+public class AddProductToCartSteps {
+  private WebDriver driver;
+  private ECommercePortal eCommercePortal;
+
+  public AddProductToCartSteps(ECommercePortal eCommercePortal) {
+      this.eCommercePortal = eCommercePortal;
+      this.driver = eCommercePortal.getDriver();
+  }
+
+  @Given("I am logged in")
+  public void i_am_logged_in() {
+      // Assume login is successful
+  }
+
+  @When("I search for a product")
+  public void i_search_for_a_product() {
+      eCommercePortal.searchForProduct("productName");
+  }
+
+  @When("I add the product to the cart")
+  public void i_add_the_product_to_the_cart() {
+      eCommercePortal.addProductToCart("productName");
+  }
+
+  @Then("the product should be added to the cart successfully")
+  public void the_product_should_be_added_to_the_cart_successfully() {
+      Map<String, Integer> cartItems = eCommercePortal.viewCartItems();
+      Assert.assertTrue(cartItems.containsKey("productName"));
+  }
+}
+
+
+
+
+public class PlaceOrderSteps {
+  private WebDriver driver;
+  private ECommercePortal eCommercePortal;
+
+  public PlaceOrderSteps(ECommercePortal eCommercePortal) {
+      this.eCommercePortal = eCommercePortal;
+      this.driver = eCommercePortal.getDriver();
+  }
+
+  @Given("I am on the checkout page")
+  public void i_am_on_the_checkout_page() {
+      eCommercePortal.navigateToCheckoutPage();
+  }
+
+  @When("I enter shipping address")
+  public void i_enter_shipping_address() {
+      eCommercePortal.enterShippingAddress("address", "city", "state", "zip");
+  }
+
+  @When("I place the order")
+  public void i_place_the_order() {
+      eCommercePortal.placeOrder();
+  }
+
+  @Then("the order should be placed successfully")
+  public void the_order_should_be_placed_successfully() {
+      Assert.assertTrue(eCommercePortal.getOrderStatus().equals("Placed"));
+  }
+}
+
+
+
+public class TrackOrderStatusSteps {
+  private WebDriver driver;
+  private ECommercePortal eCommercePortal;
+
+  public TrackOrderStatusSteps(ECommercePortal eCommercePortal) {
+      this.eCommercePortal = eCommercePortal;
+      this.driver = eCommercePortal.getDriver();
+  }
+
+  @Given("I have a valid order ID")
+  public void i_have_a_valid_order_id() {
+      // Assume a valid order ID is available
+  }
+
+  @When("I navigate to the order tracking page")
+  public void i_navigate_to_the_order_tracking_page() {
+      eCommercePortal.navigateToOrderTrackingPage();
+  }
+
+  @Then("the order status should be displayed correctly")
+  public void the_order_status_should_be_displayed_correctly() {
+      String orderStatus = eCommercePortal.getOrderStatus();
+      Assert.assertNotNull(orderStatus);
+      Assert.assertTrue(orderStatus.equals("Shipped") || orderStatus.equals("Delivered") || orderStatus.equals("Cancelled"));
+  }
+}
+

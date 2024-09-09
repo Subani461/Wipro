@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test"
+           tests="1"
+           failures="1"
+           errors="0"
+           skipped="0"
+           time="27.625">
+  <properties />
+            <testcase name="runScenario" time="27.625" classname="com.App.Testcases.testrunner">
+                <failure type="org.openqa.selenium.NoSuchElementException"
+                  message="Cannot locate an element using xpath=//label[@class=&apos;faefc93c6f c21e900fd3 c737ebb2b7&apos;]
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;DESKTOP-TIC5DM4&apos;, ip: &apos;172.20.0.59&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;x86&apos;, os.version: &apos;10.0&apos;, java.version: &apos;1.8.0_411&apos;
+Driver info: driver.version: RemoteWebDriver"
+              >
+<![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate an element using xpath=//label[@class='faefc93c6f c21e900fd3 c737ebb2b7']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-TIC5DM4', ip: '172.20.0.59', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_411'
+Driver info: driver.version: RemoteWebDriver
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:327)
+  org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
+  org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+  org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+  com.App.Testcases.filtersTestCase.i_filter_results_by(filtersTestCase.java:65)
+  ?.I filter results by "Free Cancellation"(file:///C:/Users/Administrator/eclipse-workspace/BookingApplication/src/test/resources/features/filters.feature:5)
+]]>
+      </failure>
+
+          </testcase>
+  
+  
+  
+</testsuite>

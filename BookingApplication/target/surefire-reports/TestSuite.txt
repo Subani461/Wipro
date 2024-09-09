@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 29.298 s <<< FAILURE! - in TestSuite
+runScenario(com.App.Testcases.testrunner)  Time elapsed: 27.641 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+Cannot locate an element using xpath=//label[@class='faefc93c6f c21e900fd3 c737ebb2b7']
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'DESKTOP-TIC5DM4', ip: '172.20.0.59', os.name: 'Windows 10', os.arch: 'x86', os.version: '10.0', java.version: '1.8.0_411'
+Driver info: driver.version: RemoteWebDriver
+

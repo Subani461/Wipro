@@ -1,0 +1,17 @@
+
+public class titleCaseConversion {
+
+	public static String convertToTitleCase(String input) {
+		// splitting the input with ;
+		String[] titles = input.split(";");
+		StringBuilder result = new StringBuilder();
+
+		for (String title : titles) {
+			title = title.trim();
+
+		}
+
+		return input;
+
+	}
+}

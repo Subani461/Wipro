@@ -1,0 +1,7 @@
+# Created at 2024-09-01T18:59:18.289
+io.qameta.allure.AllureResultsWriteException: Could not write Allure test result container
+	at io.qameta.allure.FileSystemResultsWriter.write(FileSystemResultsWriter.java:68)
+	at io.qameta.allure.AllureLifecycle.writeTestContainer(AllureLifecycle.java:170)
+	at io.qameta.allure.testng.AllureTestNg.lambda$onAfterClass$4(AllureTestNg.java:255)
+	at java.base/java.util.Optional.ifPresent(Optional.java:178)
+	at io.qameta.allure.testng.AllureTestNg.onAfterClass(AllureTest

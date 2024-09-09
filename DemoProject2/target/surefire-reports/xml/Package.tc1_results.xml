@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Test1"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="9.531">
+  <properties />
+  
+  
+            <testcase name="f on [tc1 passed=0 failed=0 skipped=0]" time="9.531" classname="Package.tc1" />
+      
+</testsuite>

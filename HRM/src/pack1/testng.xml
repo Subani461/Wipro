@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="Test1">
+    <classes>
+      <class name="pack1.OrangeHRM"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="Test2">
+    <classes>
+      <class name="pack1.InvalidCredentials"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test3">
+    <classes>
+      <class name="pack1.login"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="Test4">
+    <classes>
+      <class name="pack1.ChangePassword"/>
+    </classes>
+  </test> <!-- Test -->
+  
+  <test name="Test5">
+    <classes>
+      <class name="pack1.LogOut"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 1.754 s <<< FAILURE! - in TestSuite
+runScenario(com.App.Testcases.testrunner)  Time elapsed: 0.266 s  <<< FAILURE!
+io.cucumber.core.exception.CucumberException: Failed to instantiate class com.App.Testcases.loginTestCases
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: java.lang.NullPointerException
+
+runScenario(com.App.Testcases.testrunner)  Time elapsed: 0.01 s  <<< FAILURE!
+io.cucumber.core.exception.CucumberException: Failed to instantiate class com.App.Testcases.loginTestCases
+Caused by: java.lang.reflect.InvocationTargetException
+Caused by: java.lang.NullPointerException
+

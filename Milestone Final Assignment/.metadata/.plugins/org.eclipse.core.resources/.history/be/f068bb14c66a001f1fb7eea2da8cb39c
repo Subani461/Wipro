@@ -1,0 +1,51 @@
+
+import org.jsoup.Connection.Response;
+import org.openqa.selenium.WebDriver;
+
+public class tc6_verifyOrderViaAPI {
+	WebDriver driver;
+	public void verifyOrderViaAPI(String orderId) {
+	    // Set API endpoint and headers
+	    String endpoint = "https://example.com/api/orders/" + orderId;
+	    Header header = new Header("Authorization", "Bearer YOUR_API_KEY");
+
+	    // Send GET request to retrieve order details
+	    Response response = RestAssured.given()
+	            .header(header)
+	            .get(endpoint);
+
+	    // Verify order details match UI
+	    if (response.getStatusCode() == 200) {
+	        JsonPath jsonPath = response.jsonPath();
+	        String productName = jsonPath.get("items[0].productName");
+	        int quantity = jsonPath.get("items[0].quantity");
+	        double totalAmount = jsonPath.get("totalAmount");
+
+	        // Compare with UI values
+	        Map<String, Integer> cartItems = tc3_viewCartItems.viewCartItems();
+	        assertTrue(cartItems.containsKey(productName));
+	        assertEquals(cartItems.get(productName), quantity);
+
+	        // Get the total amount from the UI
+	        double uiTotalAmount = getTotalAmountFromUI();
+	        assertEquals(uiTotalAmount, totalAmount, 0.01);
+
+	        System.out.println("Order details verified successfully via API");
+	    } else {
+	        System.out.println("Failed to verify order details via API");
+	    }
+	}
+
+	// Helper method to get the total amount from the UI
+	private double getTotalAmountFromUI() {
+	    // Navigate to the order summary page
+	    driver.get("https://example.com/order-summary");
+
+	    // Get the total amount from the UI
+	    String totalAmountText = driver.findElement(By.name("totalAmount")).getText();
+	    return Double.parseDouble(totalAmountText.replace("$", ""));
+	}
+
+
+
+}

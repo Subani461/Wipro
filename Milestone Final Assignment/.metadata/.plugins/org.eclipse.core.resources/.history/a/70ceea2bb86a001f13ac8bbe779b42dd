@@ -1,0 +1,36 @@
+
+public class titleCaseConversion {
+
+	public static String convertToTitleCase(String input) {
+		// splitting the input with ;
+		String[] titles = input.split(";");
+		StringBuilder result = new StringBuilder();
+
+		for (String title : titles) {
+			title = title.trim();
+			String[] words = title.split(" ");
+			int i;
+			for (i = 0; i < words.length; i++) {
+				if (words[i].length() > 0) {
+					words[i] = words[i].substring(0, 1).toUpperCase() + words[i].substring(1).toLowerCase();
+				}
+			}
+			String titleCaseTitle = String.join(" ", words);
+			result.append(titleCaseTitle);
+
+			if (!title.equals(titles[titles.length - 1])) {
+				result.append("; ");
+
+			}
+		}
+
+		return result.toString();
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

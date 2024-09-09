@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class titleCaseConversion {
+
+	public static String convertToTitleCase(String input) {
+		// splitting the input with ;
+		String[] titles = input.split(";");
+		StringBuilder result = new StringBuilder();
+
+		for (String title : titles) {
+			title = title.trim();
+			String[] words = title.split(" ");
+			int i;
+			for (i = 0; i < words.length; i++) {
+				if (words[i].length() > 0) {
+					words[i] = words[i].substring(0, 1).toUpperCase() + words[i].substring(1).toLowerCase();
+				}
+			}
+			String titleCaseTitle = String.join(" ", words);
+			result.append(titleCaseTitle);
+
+			if (!title.equals(titles[titles.length - 1])) {
+				result.append("; ");
+
+			}
+		}
+
+		return result.toString();
+
+	}
+
+	public static void main(String[] args) {
+
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter a string of books separated with semicolons");
+		String input = scan.nextLine();
+		System.out.println(convertToTitleCase(input));
+
+		String str = "the great gatsby;to kill a mockingbird;1984;the catcher in the rye";
+	}
+
+}
