@@ -2,13 +2,18 @@ trigger:
 - master
  
 pool:
-  name: ToscaCI
+  name: ToscaCICD
  
 steps:
 - checkout: self
  
 - task: PowerShell@2
-  displayName: 'Run Tosca Execution Client'
+  displayName: 'Run Tosca Execution'
   inputs:
     filePath: 'C:\ToscaExecutionClient\tosca_execution_client.ps1'
-    pwsh: false
+ 
+- task: PublishTestResults@2
+  displayName: 'Publish Tosca Test Results'
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/_results*.xml'
