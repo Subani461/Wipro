@@ -1,0 +1,14 @@
+trigger:
+- master
+ 
+pool:
+  name: ToscaCI
+ 
+steps:
+- checkout: self
+ 
+- task: PowerShell@2
+  displayName: 'Run Tosca Execution Client'
+  inputs:
+    filePath: 'C:\ToscaExecutionClient\tosca_execution_client.ps1'
+    pwsh: false
