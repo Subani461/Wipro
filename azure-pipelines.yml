@@ -16,4 +16,4 @@ steps:
   displayName: 'Publish Tosca Test Results'
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: '**/_results*.xml'
+    testResultsFiles: 'C:\ResultsFolder\**/_results*.xml'
