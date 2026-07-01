@@ -1,19 +1,41 @@
 trigger:
-- master
+- master        # Change to 'main' if your GitHub default branch is main
  
 pool:
   name: ToscaCICD
  
 steps:
-- checkout: self
  
+# Checkout the GitHub repository
+- checkout: self
+  clean: true
+ 
+# Delete old XML files
 - task: PowerShell@2
-  displayName: 'Run Tosca Execution'
+  displayName: 'Delete old XML files'
+  inputs:
+    targetType: 'inline'
+    script: |
+      $resultPath = "C:\ResultsFolder"   # <-- Change this
+      if (Test-Path $resultPath) {
+          Remove-Item "$resultPath\*.xml" -Force -ErrorAction SilentlyContinue
+          Write-Host "Old XML files deleted."
+      }
+ 
+# Execute Tosca
+- task: PowerShell@2
+  displayName: 'Run Tosca Execution Client'
   inputs:
     filePath: 'C:\ToscaExecutionClient\tosca_execution_client.ps1'
+
  
+# Publish JUnit results
 - task: PublishTestResults@2
-  displayName: 'Publish Tosca Test Results'
+  displayName: 'Publish Test Results'
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: 'C:\ResultsFolder\**/_results*.xml'
+    testResultsFiles: 'C:\ResultsFolder\*.xml'   # <-- Change this if needed
+    searchFolder: 'C:\ToscaResults'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+    testRunTitle: 'Tosca Automation Results'
