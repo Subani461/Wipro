@@ -1,4 +1,5 @@
 
+
 name: '$(Build.DefinitionName)_$(Date:yyyyMMdd)_$(Rev:r)'
 trigger:
 - master        # Change to 'main' if your GitHub default branch is main
