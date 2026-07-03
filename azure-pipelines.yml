@@ -5,7 +5,7 @@ trigger:
 - master        # Change to 'main' if your GitHub default branch is main
  
 pool:
-  name: ToscaCICD
+  name: $(AgentPoolName)
  
 steps:
  
@@ -19,7 +19,7 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      $resultPath = "C:\ResultsFolder"   # <-- Change this
+      $resultPath = "$(ResultsPath)"   # <-- Change this
       if (Test-Path $resultPath) {
           Remove-Item "$resultPath\*.xml" -Force -ErrorAction SilentlyContinue
           Write-Host "Old XML files deleted."
@@ -29,7 +29,7 @@ steps:
 - task: PowerShell@2
   displayName: 'Run Tosca Execution Client'
   inputs:
-    filePath: 'C:\ToscaExecutionClient\tosca_execution_client.ps1'
+    filePath: '$(ToscaExeClientPath)'
 
  
 # Publish JUnit results
@@ -37,8 +37,8 @@ steps:
   displayName: 'Publish Test Results'
   inputs:
     testResultsFormat: 'JUnit'
-    testResultsFiles: 'C:\ResultsFolder\*.xml'   # <-- Change this if needed
-    searchFolder: 'C:\ToscaResults'
+    testResultsFiles: '$(ResultsPath)\*.xml'   # <-- Change this if needed
+    searchFolder: '$(ResultsPath)'
     mergeTestResults: true
     failTaskOnFailedTests: true
     testRunTitle: 'Tosca Automation Results'
