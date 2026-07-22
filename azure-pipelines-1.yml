@@ -1,0 +1,63 @@
+name: '$(Build.DefinitionName)_$(Date:yyyyMMdd)_$(Rev:r)'
+trigger:
+  - master        # Change to 'main' if your GitHub default branch is main
+ 
+pool:
+  name: $(AgentPoolName)
+ 
+steps:
+ 
+# Checkout the GitHub repository
+- checkout: self
+  clean: true
+ 
+# Delete old XML files
+- task: PowerShell@2
+  displayName: 'Delete old XML files'
+  inputs:
+    targetType: 'inline'
+    workingDirectory: '$(Agent.BuildDirectory)'
+    script: |
+      $resultPath = "$(ResultsPath)"   # <-- Change this
+      if (Test-Path $resultPath) {
+        Remove-Item "$resultPath\*.xml" -Force -ErrorAction SilentlyContinue
+        Write-Host "Old XML files deleted."
+      }
+ 
+# Execute Tosca
+- task: PowerShell@2
+  displayName: 'Run Tosca Execution Client'
+  inputs:
+    filePath: '$(ToscaExeClientPath)'
+    workingDirectory: '$(Agent.BuildDirectory)'
+    arguments: >
+      -toscaServerUrl "$(ToscaServerUrl)"
+      -projectName "$(ToscaProjectName)"
+      -events '["$(ToscaEventName)"]'
+      -clientId "$(ToscaClientId)"
+      -clientSecret "$(ToscaClientSecret)"
+ 
+# Verify results exist before publishing (fails loudly if Tosca didn't write results)
+- task: PowerShell@2
+  displayName: 'Verify results exist'
+  inputs:
+    targetType: 'inline'
+    workingDirectory: '$(Agent.BuildDirectory)'
+    script: |
+      if (Test-Path "$(ResultsPath)\*.xml") {
+        Write-Host "Results found:"
+        Get-ChildItem "$(ResultsPath)\*.xml" | ForEach-Object { Write-Host $_.FullName }
+      } else {
+        Write-Error "No results found in $(ResultsPath). Check Tosca Execution Client logs above."
+      }
+ 
+# Publish JUnit results
+- task: PublishTestResults@2
+  displayName: 'Publish Test Results'
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '$(ResultsPath)\*.xml'   # <-- Change this if needed
+    searchFolder: '$(ResultsPath)'
+    mergeTestResults: true
+    failTaskOnFailedTests: true
+    testRunTitle: 'Tosca Automation Results'
